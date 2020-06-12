@@ -18,8 +18,8 @@ int main(void)
 		putchar((n % 10) + '0');
 		if (n != 99)
 		{
-	        putchar(',');
-		putchar(' ');
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
