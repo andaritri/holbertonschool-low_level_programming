@@ -7,7 +7,7 @@
  * @void: Null value
  *
  * Description: Check the last digit of the number
- * Return: Zero value
+ * Return: Zero value to succesful
  */
 
 int main(void)
