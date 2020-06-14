@@ -27,6 +27,7 @@ int main(void)
 			if (count != 4949)
 			{
 				putchar(',');
+				putchar(' ');
 			}
 			j++;
 			count++;
