@@ -3,7 +3,7 @@
 /**
  * add - Add two numbers.
  * @a: First paramater
-~* @b: Second paramater
+ * @b: Second paramater
  *
  * Return: Sum to two numbers
  */
