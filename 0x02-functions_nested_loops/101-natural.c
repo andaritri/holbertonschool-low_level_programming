@@ -2,9 +2,11 @@
 
 /**
  * main - Entry point
+ *
+ * Return: Always 0
  */
 
-void main(void)
+int main(void)
 {
 	long int sum;
 	int start;
@@ -20,4 +22,5 @@ void main(void)
 		start++;
 	}
 	printf("%li\n", sum);
+	return (0);
 }
