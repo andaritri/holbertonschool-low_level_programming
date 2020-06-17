@@ -2,9 +2,11 @@
 
 /**
  * main - Entry point
+ *
+ * Return: Always 0
  */
 
-void main(void)
+int main(void)
 {
 	unsigned long first, second, c, next;
 
@@ -22,4 +24,5 @@ void main(void)
 		c++;
 	}
 	printf("\n");
+	return (0);
 }
