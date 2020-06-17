@@ -6,9 +6,10 @@
 
 void main(void)
 {
-	int sum, start;
+	long int sum;
+	int start;
 
-	start = 3;
+	start = 0;
 	sum = 0;
 	while (start < 1024)
 	{
@@ -18,5 +19,5 @@ void main(void)
 		}
 		start++;
 	}
-	printf("%d\n", sum);
+	printf("%li\n", sum);
 }
