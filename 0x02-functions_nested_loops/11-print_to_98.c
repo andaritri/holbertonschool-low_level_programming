@@ -15,14 +15,14 @@ void print_to_98(int n)
 	{
 		for (i = n; i >= stop; i--)
 		{
-			 if (i != 98)
-			 {
-				  printf("%d, ", i);
-			  }
-			 else
-			 {
-				 printf("%d", i);
-			 }
+			if (i != 98)
+			{
+				printf("%d, ", i);
+			}
+			else
+			{
+				printf("%d", i);
+			}
 		}
 	}
 	else
@@ -37,7 +37,7 @@ void print_to_98(int n)
 			{
 				printf("%d", i);
 			}
-	        }
+		}
 	}
 	printf("\n");
 }
