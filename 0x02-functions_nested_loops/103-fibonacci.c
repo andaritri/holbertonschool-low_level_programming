@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	signed long long first, second, c, next;
+	int first, second, c, next;
 
 	first = 1;
 	second = 2;
@@ -25,7 +25,7 @@ int main(void)
 			c = c + next;
 		}
 	}
-	printf("%lli", c);
+	printf("%d", c);
 	printf("\n");
 	return (0);
 }
