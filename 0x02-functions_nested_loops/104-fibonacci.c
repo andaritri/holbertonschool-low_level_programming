@@ -8,19 +8,20 @@
 
 int main(void)
 {
-	unsigned long first, second, c, next;
+	float first, second, next;
+	int c;
 
 	first = 1;
 	second = 2;
 	c = 2;
 
-	printf("%lu, %lu", first, second);
+	printf("%.f, %.f", first, second);
 	while (c  < 98)
 	{
 		next = first + second;
 		first = second;
 		second = next;
-		printf(", %lu", next);
+		printf(", %.f", next);
 		c++;
 	}
 	printf("\n");
