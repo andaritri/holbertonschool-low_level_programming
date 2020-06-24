@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * puts2 - print string
@@ -10,12 +9,12 @@
 
 void puts2(char *str)
 {
-	while (1)
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(*str);
-		str = str + 2;
-		if (*str == '\0')
-			break;
+		if (i % 2 == 0)
+			_putchar(str[i]);
 	}
 	_putchar('\n');
 }
