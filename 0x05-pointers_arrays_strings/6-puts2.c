@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * puts2 - print string
