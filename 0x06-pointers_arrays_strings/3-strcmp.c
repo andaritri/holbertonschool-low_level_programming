@@ -12,26 +12,13 @@ int _strcmp(char *s1, char *s2)
 	char *l = s2;
 	int res = 0;
 
-	while (1)
+	while (*r || *l)
 	{
-		if (*l != *r)
-		{
-			res = *l - *r;
-			break;
-		}
-		else
-		{
-			if (*(l + 1)  == '\0' && *(r + 1) == '\0')
-			{
-				break;
-			}
-
-			else
-			{
-				l++;
-				r++;
-			}
-		}
+		res = *r - *l;
+		if (res != 0)
+			return (res);
+		r++;
+		l++;
 	}
 	return (res);
 }
