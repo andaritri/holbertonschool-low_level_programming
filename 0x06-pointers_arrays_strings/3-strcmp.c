@@ -10,7 +10,7 @@ int _strcmp(char *s1, char *s2)
 {
 	char *r = s1;
 	char *l = s2;
-	int res;
+	int res = 0;
 
 	while (1)
 	{
@@ -23,7 +23,6 @@ int _strcmp(char *s1, char *s2)
 		{
 			if (*(l + 1)  == '\0' && *(r + 1) == '\0')
 			{
-				res = 0;
 				break;
 			}
 
