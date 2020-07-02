@@ -3,7 +3,7 @@
 /**
  * aux_prime - prime numer
  * @n:integer.
- * @a: integer.
+ * @temp: integer.
  * Return: values or -1.
  */
 
