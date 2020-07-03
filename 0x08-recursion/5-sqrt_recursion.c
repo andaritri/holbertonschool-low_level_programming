@@ -1,12 +1,13 @@
 #include "holberton.h"
+
 /**
- * zoom - calculate square
+ * aux_sqrt - calculate square
  * @n:integer.
  * @a: integer.
  * Return: values or -1.
  */
 
-int zoom(int n, int a)
+int aux_sqrt(int n, int a)
 {
 	if (n <= 0 || n < a * a)
 	{
@@ -16,8 +17,9 @@ int zoom(int n, int a)
 	{
 		return (a);
 	}
-	return (zoom(n, a + 1));
+	return (aux_sqrt(n, a + 1));
 }
+
 /**
  * _sqrt_recursion - returns the natural square root of a number.
  * @n: integer.
@@ -26,5 +28,5 @@ int zoom(int n, int a)
 
 int _sqrt_recursion(int n)
 {
-	return (zoom(n, 1));
+	return (aux_sqrt(n, 1));
 }
