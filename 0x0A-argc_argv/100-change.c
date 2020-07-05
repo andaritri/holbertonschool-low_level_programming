@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	cent = atoi(argv[1]);
-	if (atoi(argv[1]) < 0)
+	if (cent < 0)
 		printf("0\n");
 	else
 	{
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 				cent = cent % coins[i];
 			}
 		}
+		printf("%d\n", n_coins);
 	}
-	printf("%d\n", n_coins);
 	return (0);
 }
