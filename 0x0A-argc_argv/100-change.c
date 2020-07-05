@@ -20,20 +20,23 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+	cent = atoi(argv[1]);
 	if (atoi(argv[1]) < 0)
 		printf("0\n");
-	cent = atoi(argv[1]);
-	for (i = 0; i < 5; i++)
+	else
 	{
-		if (cent % coins[i] == 0)
+		for (i = 0; i < 5; i++)
 		{
-			n_coins += cent / coins[i];
-			break;
-		}
-		else
-		{
-			n_coins += cent / coins[i];
-			cent = cent % coins[i];
+			if (cent % coins[i] == 0)
+			{
+				n_coins += cent / coins[i];
+				break;
+			}
+			else
+			{
+				n_coins += cent / coins[i];
+				cent = cent % coins[i];
+			}
 		}
 	}
 	printf("%d\n", n_coins);
