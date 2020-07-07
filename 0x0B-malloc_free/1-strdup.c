@@ -25,6 +25,6 @@ char *_strdup(char *str)
 		str++;
 		s++;
 	}
-	*s = '\0';
+	*s = *str;
 	return (start_s);
 }
