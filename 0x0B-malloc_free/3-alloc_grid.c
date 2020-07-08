@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <holberton.h>
 
 /**
  * alloc_grid - pointer to a 2D array.
