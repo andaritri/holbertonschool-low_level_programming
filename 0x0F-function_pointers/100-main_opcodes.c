@@ -9,7 +9,7 @@
  * Return: always 0.
  */
 
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
 	int i;
 
@@ -23,4 +23,7 @@ int main(int argc, char *argv)
 		printf("Error\n");
 		exit(2);
 	}
+	for (i = 0; i < atoi(argv[1]); i++)
+		printf("%.2x ", i);
+	printf("\n");
 }
