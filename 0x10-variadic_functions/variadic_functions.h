@@ -1,5 +1,5 @@
-#ifndef HEADER_H
-#define HEADER_H
+#ifndef _HEADER_H_
+#define _HEADER_H_
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
@@ -20,4 +20,4 @@ typedef struct formats
 } ft;
 
 void print_all(const char * const format, ...);
-#endif
+#endif/*_HEADER_H_*/
