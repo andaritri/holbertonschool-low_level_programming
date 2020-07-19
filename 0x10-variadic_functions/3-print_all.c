@@ -70,6 +70,7 @@ void print_all(const char * const format, ...)
 
 	int i = 0, j = 0;
 	va_list list;
+	void (*fc)(va_list);
 
 	va_start(list, format);
 	while (format[i] != '\0' && format != NULL)
@@ -79,7 +80,8 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == types[j].ch)
 			{
-				types[j].func(list);
+				fc = types[j].func;
+				fc(list);
 				if (format[i + 1] != '\0')
 					printf(", ");
 			}
