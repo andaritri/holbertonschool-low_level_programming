@@ -9,9 +9,9 @@
  * Return: nothing.
  */
 
-void print_char(void *c)
+void print_char(va_list c)
 {
-	printf("%c", *((char *)c));
+	printf("%c", va_arg(c, int));
 }
 
 /**
@@ -21,9 +21,9 @@ void print_char(void *c)
  * Return: nothing.
  */
 
-void print_int(void *i)
+void print_int(va_list i)
 {
-	printf("%d", *((int *)i));
+	printf("%d", va_arg(i, int));
 }
 
 /**
@@ -32,9 +32,9 @@ void print_int(void *i)
  *
  * Return: nothing.
  */
-void print_float(void *f)
+void print_float(va_list f)
 {
-	printf("%f", *((float *)f));
+	printf("%f", va_arg(f, double));
 }
 
 /**
@@ -44,9 +44,11 @@ void print_float(void *f)
  * Return: nothing.
  */
 
-void print_str(void *s)
+void print_str(va_list  s)
 {
-	printf("%s", (char *)s ? (char *)s : "(nil)");
+	char *str = va_arg(s, char*);
+
+	printf("%s", str ? str : "(nil)");
 }
 
 /**
@@ -67,12 +69,9 @@ void print_all(const char * const format, ...)
 	};
 
 	int i = 0, j = 0;
-	void *p;
-	char *separator;
 	va_list list;
 
 	va_start(list, format);
-	separator = "";
 	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
@@ -80,10 +79,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == types[j].ch)
 			{
-				printf("%s", separator);
-				p = va_arg(list, void *);
-				types[j].func(p);
-				separator = ", ";
+				types[j].func(list);
+				if (format[i + 1] != '\0')
+					printf(", ");
 			}
 			j++;
 		}
