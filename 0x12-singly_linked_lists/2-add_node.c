@@ -12,8 +12,6 @@
  * Return: pointer of the new element added to linked list.
  */
 
-int _strlen(const char *s);
-
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
@@ -28,11 +26,18 @@ list_t *add_node(list_t **head, const char *str)
 	return (new);
 }
 
+/**
+ * _strlen - Calculate lenght of a string.
+ * @s: string.
+ *
+ * Return: lenght of the string s.
+ */
+
 int _strlen(const char *s)
 {
 	int idx = 0;
 
 	for (; s[idx]; idx++)
 	;
-	return(idx);
+	return (idx);
 }
