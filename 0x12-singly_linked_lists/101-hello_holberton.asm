@@ -1,5 +1,5 @@
 	section   .text
-		global main
+	global main
 main:
 	mov       ebx, 1
 	mov       ecx, msg
@@ -8,5 +8,5 @@ main:
 	int  	  0x80
 	mov       eax, 0
 	int       0x80
-section  .data
+	section  .data
 	msg db    'Hello, Holberton', 0xa
