@@ -1,5 +1,3 @@
-#include "lists.h"
-
 /**
  * reverse_listint - reverse a linked list.
  * @head: head of the linked list.
@@ -9,10 +7,9 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *prev = '\0';
-	listint_t *next;
+	listint_t *next, *prev = '\0';
 
-	if (head == '\0')
+	if (*head == '\0')
 		return ('\0');
 	while (*head)
 	{
