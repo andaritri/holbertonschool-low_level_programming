@@ -26,7 +26,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buf_letters);
 		return (0);
 	}
-	count_chars = write(STDOUT_FILENO, buf_letters, letters);
+	count_chars = write(STDOUT_FILENO, buf_letters, fd_read);
 	if (count_chars == -1)
 	{
 		free(buf_letters);
