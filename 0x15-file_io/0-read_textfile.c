@@ -1,6 +1,4 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/fcntl.h>
+#include "holberton.h"
 /**
  * read_textfile - read a textfile.
  * @filename: name of the file to open.
@@ -26,7 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd_read = read(fd_open, buf_letters, letters);
 	if (fd_read == -1)
 		return (0);
-	count_chars = write(1, buf_letters, letters);
+	count_chars = write(STDOUT_FILENO, buf_letters, letters);
 	if (count_chars == -1)
 		return (0);
 	return (count_chars);
