@@ -17,29 +17,50 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
 	}
 	inputFD = open(argv[1], O_RDONLY);
-	nBytes_read = read(inputFD, text, BUF_SIZE);
-	if (inputFD == -1 || nBytes_read == -1)
+	if (inputFD == -1)
 	{
-		exit(98);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 			argv[1]);
+		exit(98);
 	}
 	outputFD = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	nBytes_write = write(outputFD, text, nBytes_read);
-	if (outputFD == -1 || nBytes_write == -1)
+	if (outputFD == -1)
 	{
-		exit(99);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
 	}
-	if (close(inputFD) == -1)
+	while ((nBytes_read = read(inputFD, text, BUF_SIZE)) > 0)
 	{
-		exit(100);
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", inputFD);
+		nBytes_write = write(outputFD, text, nBytes_read);
+		if (nBytes_write == -1)
+		{
+			exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
+				argv[2]);
+		}
 	}
-	if (close(outputFD) == -1)
+	if (nBytes_read == -1)
 	{
-		exit(100);
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", outputFD);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+			argv[1]);
+		exit(98);
 	}
+	close_file(inputFD);
+	close_file(outputFD);
 	return (0);
+}
+
+/**
+ * close_file - close a opened file
+ * @FD: file descriptor.
+ *
+ * Return_ nothing.
+ */
+void close_file(int FD)
+{
+	if (close(FD) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", FD);
+		exit(100);
+	}
 }
