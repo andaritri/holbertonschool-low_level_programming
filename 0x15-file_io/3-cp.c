@@ -34,9 +34,9 @@ int main(int argc, char *argv[])
 		nBytes_write = write(outputFD, text, nBytes_read);
 		if (nBytes_write == -1)
 		{
-			exit(99);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
 				argv[2]);
+			exit(99);
 		}
 	}
 	if (nBytes_read == -1)
