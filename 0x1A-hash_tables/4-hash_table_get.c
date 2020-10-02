@@ -10,14 +10,17 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	int key_idx;
-	char *val;
 
 	if (!ht || !key || !key[0])
-		val = NULL;
+		return (NULL);
 	key_idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[key_idx] == NULL || key_idx >= (int)ht->size)
-		val = NULL;
-	else
-		val = ht->array[key_idx]->value;
-	return (val);
+		return (NULL);
+	while (ht->array[key_idx])
+	{
+		if (!strcmp(ht->array[key_idx]->key, key))
+			break;
+		ht->array[key_idx] = ht->array[key_idx]->next;
+	}
+	return (ht->array[key_idx]->value);
 }
