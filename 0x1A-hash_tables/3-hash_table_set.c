@@ -11,11 +11,23 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int key_idx;
+	hash_node_t *node;
 	int added;
 
 	if (!ht || !key || !value || !key[0])
 		return (0);
 	key_idx = key_index((unsigned char *)key, ht->size);
+	node = ht->array[key_idx];
+	while (node != NULL)
+	{
+		if (!strcmp(node->key, key))
+		{
+			free(node->value);
+			node->value = (char *)strdup(value);
+			return (1);
+		}
+		node = node->next;
+	}
 	added = add_node(&ht->array[key_idx], key, value);
 	return (added);
 }
