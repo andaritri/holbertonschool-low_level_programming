@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	return (added);
 }
 /**
- * Add_node - Add a node at the beginning of a singly linked list.
+ * add_node - Add a node at the beginning of a singly linked list.
  * @h: pointer to first node of the linked list.
  * @key: string to add to node
  * @value: string to add to node
