@@ -1,9 +1,8 @@
 # Low-Level Programming
----
+
 Foundations of the computer science.
 
 ## Description:
----
 This repositorios contain projects related to low-level programming, specially
 with the C programming language. Each project is structured to learn a specific
 topic.
@@ -42,12 +41,11 @@ In order for detail description, here are listed all the projects:
 - [0x1D-binary_trees](https://github.com/aarizat/binary_trees)
 
 ## Dependencias
----
+
 - All the files were compiled on Ubuntu 14.04 LTS using `gcc 4.8.4`
 - The code use the [Betty style](https://github.com/holbertonschool/Betty)
 
 ## Installing
----
 
 If you want to have this repository on your local machine, just execute the
 following command:
@@ -57,6 +55,6 @@ git clone git@github.com:aarizat/holbertonschool-low_level_programming.git
 ```
 
 ## Author
----
+
 * **Github** - [aarizat](https://github.com/aarizat)
 * **Twitter** - [@aarizatr](https://twitter.com/aarizatr)
